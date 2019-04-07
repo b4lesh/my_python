@@ -1,6 +1,9 @@
-x(int(input("Введите число"))
-    def even_num(x % 2): 
-     if even_num == 0:
-    print("Чётное")
+def get_parity(x):
+    if x % 2 == 0:
+        return('Четное')
     else:
-    print("Нечетное")
+        return('Нечетное')
+
+
+num = int(input("Введите число: "))
+print(get_parity(num))
