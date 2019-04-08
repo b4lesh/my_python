@@ -1,8 +1,8 @@
 def get_parity(x):
     if x % 2 == 0:
-        return('Четное')
+        return 'Четное'
     else:
-        return('Нечетное')
+        return 'Нечетное'
 
 
 num = int(input("Введите число: "))

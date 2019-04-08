@@ -1,9 +1,11 @@
 Z = int(input("Введите атомный номер: "))
 if Z == 3:
-        print("Литий")
+    print("Литий")
 elif Z == 25:
-       print("Марганец")
+    print("Марганец")
 elif Z == 80:
-        print("Серебро")
+    print("Серебро")
 elif Z == 17:
-        print("Хлор")
+    print("Хлор")
+else:
+    print("Неверный номер.")

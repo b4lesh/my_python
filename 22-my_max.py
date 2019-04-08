@@ -5,7 +5,7 @@ def max_num(x, y):
         return y
 
 
-x=int(input("Введите первое число: "))
-y=int(input("Введите второе число: "))
+x = int(input("Введите первое число: "))
+y = int(input("Введите второе число: "))
 
-print(max_num(x,y))
+print(max_num(x, y))
