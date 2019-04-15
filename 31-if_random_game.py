@@ -1,12 +1,15 @@
 def if_random_game(x):
-    if x == random_num:
+    import random
+    n = random.randint(1, 4)
+    if x == n:
         return 'Победа!'
     else:
-        return 'Повторите еще раз!'
+        if x > n:
+            return 'Число больше.'
+        else:
+            return 'Число меньше.'
 
 
-import random
-random_num = random.randit(1, 4)
 
 num = int(input("Введите число: "))
 print(if_random_game(num))
