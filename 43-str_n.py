@@ -1,8 +1,8 @@
 def my_str(s, n):
-    if len(s) > len(n):
-        return s.upper
+    if len(s) > int(n):
+        return s.upper()
     else:
-        return s == s
+        return s 
 
 
 s = str(input('Введите строку: '))
