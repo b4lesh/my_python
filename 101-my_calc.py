@@ -8,11 +8,10 @@ elif z == '-':
 elif z == '*':
     result = x * y
 elif z == '/':
-    resulr = x / y
-try:
-    y == '0'
-except ZeroDivisionError:
-    print("Ошибка деления на нуль")    
+    try:
+        result = x / y
+    except ZeroDivisionError:
+        result = "Ошибка деления на ноль"    
 
 
 print('Результат: ', result)
