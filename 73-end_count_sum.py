@@ -5,10 +5,8 @@ while True:
     if num == 'стоп':
         print('Выход из программы! До встречи')
         break
-    else:
-        try:
-            summ = int(num) + summ
-        except:
-            print('Ошибка ввода.')
-            continue
-print('Cумма: ', summ)
+    try:
+        summ = int(num) + summ
+    except:
+        print('Ошибка ввода.')
+    print('Cумма: ', summ)
