@@ -1,13 +1,13 @@
 def add_task():
     text = input('Сформулируйте задачу: ')
-    category = input()
-    time = input()
+    category = input('Категория задачи: ')
+    time = input('Время выполнения: ')
     TODO.append([text, category, time])
 
 def show_all_tasks():
     for task in TODO:
         text, category, time = task
-        print(f'Задача: {text} Категория: {category} Дата: {time}')
+        print(f'Задача: {text} | Категория: {category} | Время выполнения: {time}')
     print('')
 
 TODO = []
@@ -22,12 +22,13 @@ while True:
         command = int(input('Выберите команду: '))
     except:
         print('Неверный ввод!')
-        сontinue
+        continue
     if command == 1:
         add_task()
     elif command == 2:
         show_all_tasks()
     elif command == 3:
+        print('Выход из программы.')
         break
     else:
          print('Неверная команда! ')

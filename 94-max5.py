@@ -7,8 +7,6 @@ def max_sequence(seq):
     [7, 2, 9, 2, 9]
     """
 
-    # здесь будет код
-    
 
 if __name__ == '__main__':
     import doctest
