@@ -12,7 +12,7 @@ for pi_num in [i for i in string.split() if i[0].isdigit()]:
         pi.append(float(pi_num))
     else:
         pi.append(int(pi_num))
-print('Числа в тексте: ', pi)
-max_num = print('Максимальное число списка: ', max(pi))
-summ_num = print('Сумма всех чисел списка: ', sum(pi))
-len_num = print('Количество элементов списка: ', len(pi))
+print('Список чисел в тексте: ', pi)
+print('Максимальное число списка: ', max(pi))
+print('Сумма всех чисел списка: ', sum(pi))
+print('Количество элементов списка: ', len(pi))

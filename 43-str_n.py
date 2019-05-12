@@ -1,5 +1,5 @@
 def my_str(s, n):
-    if len(s) > (n):
+    if len(s) > n:
         return s.upper()
     else:
         return s 

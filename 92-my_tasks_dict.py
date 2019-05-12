@@ -1,6 +1,5 @@
-task = {'text': '', 'category': '', 'date': ''}
+TODO = []
 
-lst = list()
 
 while True:
     hello_text = '''Простой todo:
@@ -14,17 +13,13 @@ while True:
         print('Неверный ввод!')
         continue
     if command == 1:
-        first = input('Сформулируйте задачу: ')
-        task['text'] = first
-        two = input('Категория задачи: ')
-        task['category'] = two
-        three = input('Время выполнения: ')
-        task['date'] = three
-        
-        lst.append(task)
+        text = input('Сформулируйте задачу: ')
+        category = input('Категория задачи: ')
+        time = input('Время выполнения: ')
+        TODO.append({'text': text, 'category': category, 'date': time})
 
     if command == 2:
-        for i in lst:
+        for i in TODO:
             print(f"Задача: {i['text']} | Категория: {i['category']} | Число: {i['date']}")
 
     if command == 3:
