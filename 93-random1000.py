@@ -14,10 +14,6 @@ if min_i < max_i:
 else:
     slice = lst[max_i:min_i + 1]
 
-result = 0
-for num in slice:
-    if num < 0:
-        result += 1
 
 result = len([num for num in slice if num < 0])
 print(result)
