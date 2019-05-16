@@ -15,20 +15,24 @@ def add_task():
     entry_time.delete(0, tkinter.END)
 
 def show_list():
-    for i in task in tasks:
+    for i in task in enumerate(tasks):
          print(f"Задача: {i['text']} | Категория: {i['category']} | Число: {i['date']}")
          text.insert(1.0)
 
-#tasks = read_file()
+tasks = read_file()
 
 
 
 
 window = tkinter.Tk()
 window.title('Менеджер задач')
-window.geometry('300x150')
+window.geometry('500x150')
+
 frame_global_wrap = tkinter.Frame(window)
 frame_global_wrap.pack()
+
+frame=tkinter.Frame(frame_global_wrap)
+frame.pack(side='left')
 
 frame_wrap_input = tkinter.Frame(frame_global_wrap)
 frame_wrap_input.pack(side='top')
@@ -73,5 +77,11 @@ button_next.pack()
 
 button_next = tkinter.Button(frame_button, text = 'Выход', width = '25', command = window.destroy)
 button_next.pack()
+
+frame_2 = tkinter.Frame(frame_global_wrap)
+frame_2.pack(side = 'rigth')
+
+text = tkinter.Text(frame_2, height = '5', width = '40')
+text.pack()
 
 window.mainloop()
