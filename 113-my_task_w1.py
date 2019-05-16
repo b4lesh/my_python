@@ -1,54 +1,67 @@
 import tkinter
 import json
 
+def add_task():
+    text = entry_task.get()
+    category = entry_category.get()
+    time = entry_category.get()
+
+    tasks.append({'text': text, 'category': category, 'date': time})
+    print('Задача добавлена')
+    write_file(tasks)
+
+    entry_task.delete(0, tkinter.END)
+    entry_category.delete(0, tkinter.END)
+    entry_time.delete(0, tkinter.END)
+
+def show_list():
+    for i.task in enumerate(taks):
+         print(f"Задача: {i['text']} | Категория: {i['category']} | Число: {i['date']}")
+         text.insert(float(i+1))
+
+tasks = read_file()
 
 
-def read_file():
-    try:
-        with open(FILE_NAME, 'r') as file:
-            text = file.readline()
-            result = json.loads(text)
-            return result
-    except:
-        print('Файла нет!')
-        return []
 
-tasks = read('my_task.json')
 
 window = tkinter.Tk()
+frame_global_wrap = tkinter.Frame(window)
+frame_global_wrap.pack()
+
+frame_wrap_input = tkinter.Frame(frame_global_wrap)
+frame_wrap_input.pack(side='top')
+
+frame_label = tkinter.Frame(frame_wrap_input)
+frame_label.pack(side='left')
+
+label_task = tkinter.Label(frame_label, text = 'Задача: ')
+label_task.pack()
+
+label_category = tkinter.Label(frame_label, text = 'Категория: ')
+label_category.pack()
+
+label_time = tkinter.Label(frame_label, text = 'Время: ')
+label_time.pack()
 
 
-frame_task = tkinter.Frame(window)
-frame_task.pack()
+
+frame_entry = tkinter.Frame(frame_wrap_input)
+frame_entry.pack(side='right')
+
+entry_task = tkinter.Entry(frame_entry)
+entry_task.pack()
+
+entry_category = tkinter.Entry(frame_entry)
+entry_category.pack()
+
+entry_time = tkinter.Entry(frame_entry)
+entry_time.pack()
 
 
-label_task = tkinter.Label(frame_task, text = 'Задача: ')
-label_task.pack(side='left')
 
-entry_task = tkinter.Entry(frame_task)
-entry_task.pack(side = 'right')
-
-frame_category = tkinter.Frame(window)
-frame_category.pack()
-
-label_category = tkinter.Label(frame_category, text = 'Категория: ')
-label_category.pack(side = 'left')
-
-entry_category = tkinter.Entry(frame_category)
-entry_category.pack(side = 'right')
-
-frame_time = tkinter.Frame(window)
-frame_time.pack()
-
-
-label_time = tkinter.Label(frame_time, text = 'Время: ')
-label_time.pack(side = 'left')
-
-entry_time = tkinter.Entry(frame_time)
-entry_time.pack(side = 'right')
 
 frame_button = tkinter.Frame(window)
-frame_button.pack()
+frame_button.pack(side='bottom')
 
 button_next = tkinter.Button(frame_button, text = 'Заказать')
 button_next.pack()
@@ -58,3 +71,5 @@ button_next.pack()
 
 button_next = tkinter.Button(frame_button, text = 'Выход', command = window.destroy)
 button_next.pack()
+
+window.mainloop()

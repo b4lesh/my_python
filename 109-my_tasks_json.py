@@ -44,5 +44,6 @@ while True:
             print(f"Задача: {i['text']} | Категория: {i['category']} | Число: {i['date']}")
 
     if command == 3:
+        write_file(TODO)
         print('Выход из программы.')
         break

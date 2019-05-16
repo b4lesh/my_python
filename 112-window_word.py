@@ -4,12 +4,13 @@ words = {'dog':'собака', 'cat':'кот', 'human':'человек', 'table'
 
 def random_text(words):
     import random
-    return random.choice(words)
+    random_eng_word = random.choice(list(words.keys()))
+    return random_eng_word
 
 def translate():
-    eng_word = label_word.get()
+    eng_word = label_word.cget('text')
     ru_word = entry.get()
-    if words.get(ru_word) == eng_word:
+    if words[eng_word] == ru_word.lower():
         return label_result.config(text='Угадали!')
     else:
         return label_result.config(text='Не правильно.')
