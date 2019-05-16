@@ -1,7 +1,7 @@
 with open ('moby.txt', 'r') as chapter:
     moby = [line.lower().strip() for line in chapter.readlines()]
 
-with open('moby_clear.txt', 'w') as new_moby:
+with open('moby_clean.txt', 'w') as moby_clean:
     for line in moby:
         symbols = list(line)
         new_line = [symbol for symbol in symbols if symbol.isalpha() or symbol == ' ']
@@ -9,5 +9,5 @@ with open('moby_clear.txt', 'w') as new_moby:
         words = new_line.split(' ')
         for word in words:
             if word != '':
-                moby_clear.write(word + '\n')
+                moby_clean.write(word + '\n')
         print(new_line)
