@@ -13,9 +13,9 @@ def translate():
     if words[eng_word] == ru_word.lower():
         entry.delete(0, tkinter.END)
         label_result.config(text='Угадали!')
-        label.config(text=random_text())
+        label_word.config(text=random_text(words))
     else:
-        return label_result.config(text='Не правильно.')
+        label_result.config(text='Не правильно.')
 
 
 window = tkinter.Tk()
