@@ -1,6 +1,11 @@
 import tkinter
 import json
 
+def write_file(x):
+    with open(FILE_NAME, 'w') as file:
+        text = json.dumps(x)
+        file.write(text)
+
 def add_task():
     text = entry_task.get()
     category = entry_category.get()
@@ -15,11 +20,11 @@ def add_task():
     entry_time.delete(0, tkinter.END)
 
 def show_list():
-    for i in task in tasks:
+    for i in tasks:
          print(f"Задача: {i['text']} | Категория: {i['category']} | Число: {i['date']}")
-         text.insert(1.0)
+         text.insert(float(i+1)
 
-#tasks = read_file()
+tasks = read_file()
 
 
 

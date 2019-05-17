@@ -21,7 +21,6 @@ def write_file(x):
 
 
 TODO = read_file()
-print(TODO)
 while True:
     hello_text = '''Простой todo:
         1. Добавить задачу

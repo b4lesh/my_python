@@ -21,7 +21,7 @@ window = tkinter.Tk()
 label = tkinter.Label(window, text = 'Случайное слово: ')
 label.pack()
 
-label_word = tkinter.Label(window, text=random(words))
+label_word = tkinter.Label(window, text=random_text(words))
 label_word.pack()
 
 label_translate = tkinter.Label(window, text = 'Укажите перевод слова: ')
