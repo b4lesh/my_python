@@ -35,8 +35,7 @@ def add_task():
 def show_list():
     text.delete(1.0, tkinter.END)
     for i, task in enumerate(tasks):
-         #print(f"Задача: {task['text']} | Категория: {task['category']} | Число: {task['date']}")
-         text.insert(float(i+1), f"Задача: {task['text']} | Категория: {task['category']} | Число: {task['date']}")
+        text.insert(float(i+1), f"Задача: {task['text']} | Категория: {task['category']} | Число: {task['date']} \n")
 
 tasks = read_file()
 
@@ -50,11 +49,9 @@ window.title('Менеджер задач')
 frame_global = tkinter.Frame(window)
 frame_global.pack()
 
-#левая сторона
 
 frame_movie=tkinter.Frame(frame_global)
 frame_movie.pack(side='left')
-
 
 
 frame_movie_input = tkinter.Frame(frame_movie)
@@ -73,8 +70,6 @@ label_category.pack()
 label_time = tkinter.Label(frame_label, text = 'Время: ')
 label_time.pack()
 
-#поля ввода
-
 
 frame_entry = tkinter.Frame(frame_movie_input)
 frame_entry.pack(side='right')
@@ -87,8 +82,6 @@ entry_category.pack()
 
 entry_time = tkinter.Entry(frame_entry)
 entry_time.pack()
-
-#кнопки
 
 
 frame_button = tkinter.Frame(frame_movie)
@@ -103,7 +96,6 @@ button_list.pack()
 button_exit = tkinter.Button(frame_button, text = 'Выход', width = '25', command = window.destroy)
 button_exit.pack()
 
-#правая сторона
 
 frame_view = tkinter.Frame(frame_global)
 frame_view.pack(side = 'right')
