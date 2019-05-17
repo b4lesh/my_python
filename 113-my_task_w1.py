@@ -1,15 +1,30 @@
 import tkinter
 import json
 
+FILE_NAME = 'task.json'
+
+def read_file():
+    try:
+        with open(FILE_NAME, 'r') as file:
+            text = file.readline()
+            result = json.loads(text)
+            return result
+    except:
+        print('Файла нет!')
+        return []
+
+
 def write_file(x):
     with open(FILE_NAME, 'w') as file:
         text = json.dumps(x)
         file.write(text)
 
+
+
 def add_task():
     text = entry_task.get()
     category = entry_category.get()
-    time = entry_category.get()
+    time = entry_time.get()
 
     tasks.append({'text': text, 'category': category, 'date': time})
     print('Задача добавлена')
@@ -21,8 +36,9 @@ def add_task():
 
 def show_list():
     for i in tasks:
-         print(f"Задача: {i['text']} | Категория: {i['category']} | Число: {i['date']}")
-         text.insert(float(i+1)
+         print(f"Задача: {i['text']} | Категория: {i['category']} | Время: {i['date']}")
+        
+
 
 tasks = read_file()
 
@@ -31,7 +47,8 @@ tasks = read_file()
 
 window = tkinter.Tk()
 window.title('Менеджер задач')
-window.geometry('300x150')
+window.resizable(False, False)
+window.geometry('300x160')
 frame_global_wrap = tkinter.Frame(window)
 frame_global_wrap.pack()
 
@@ -70,13 +87,13 @@ entry_time.pack()
 frame_button = tkinter.Frame(window)
 frame_button.pack(side='bottom')
 
-button_next = tkinter.Button(frame_button, text = 'Добавить', width = '25')
-button_next.pack()
+button_add = tkinter.Button(frame_button, text = 'Добавить', width = '25', command = add_task)
+button_add.pack()
 
-button_next = tkinter.Button(frame_button, text = 'Список задач', width = '25')
-button_next.pack()
+button_list = tkinter.Button(frame_button, text = 'Список задач', width = '25', command = show_list)
+button_list.pack()
 
-button_next = tkinter.Button(frame_button, text = 'Выход', width = '25', command = window.destroy)
-button_next.pack()
+button_exit = tkinter.Button(frame_button, text = 'Выход', width = '25', command = window.destroy)
+button_exit.pack()
 
 window.mainloop()
